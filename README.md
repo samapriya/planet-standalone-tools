@@ -1,7 +1,7 @@
 # Planet-Standalone-Tools
 These are standalone tools created based on user requestes and long/short discussions with a few users from time to time. I hope to keep adding to this as on a need basis or requests.
 
-### Planet-IDlist-Footprint
+### 1) Planet-IDlist-Footprint
 This tool allows you to convert a csv file with idlist to a geojson metadata file. The csv has the header ```id``` followed by the list of ids in the same column. The order of input is
 ```
 inputfile =input csv file with id as csv file header
@@ -27,7 +27,7 @@ Structure of the input CSV file with list of file ID(s)
 
 ![CLI](https://i.imgur.com/C2WXwwz.gif)
 
-### Planet-SR-Tools
+### 2) Planet-SR-Tools
 Currently the surface reflectance images have additional metadata json written into the GeoTIFF TIFFTAG. You can read the specifications and white [paper here](https://assets.planet.com/marketing/PDF/Planet_Surface_Reflectance_Technical_White_Paper.pdf). Though this is useful in some sense, not every platform can read from the header tags. This tool was written so as to extract both the PSScene4Band image metadata from which the Surface reflectance is created and then geotiff tifftags to a combined csv which can then be parsed. This tool requires that gdal is installed and can be called natively in command prompt or terminal.
 
 The example metadata json written into the GeoTIFF TIFFTAG is the following
@@ -79,7 +79,7 @@ To use simply type
 ![CLI](https://i.imgur.com/ZgCDijB.gif)
 
 
-### Split MultiBand Images in Folder to Single Images
+### 3) Split MultiBand Images in Folder to Single Images
 
 This tool will allow you to split all multiband images in a folder into their component bands as single images. Note for now this only works with ".tif" files but you can change the extension within the program to whatever you need. This tool requires that gdal is installed and can be called natively in command prompt or terminal.
 
