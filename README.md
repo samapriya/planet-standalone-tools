@@ -2,7 +2,7 @@
 These are standalone tools created based on user requestes and long/short discussions with a few users from time to time. I hope to keep adding to this as on a need basis or requests.
 
 ### 1) Planet-IDlist-Footprint
-This tool allows you to convert a csv file with idlist to a geojson metadata file with image footprints. Each footprint has the related metadata associated with the imagery so you can do further analysis by converting it into kml or shape file for checking coverage or any other statistical analysis. The csv has the header ```id``` followed by the list of ids in the same column. The order of input is
+This tool allows you to convert a csv file with idlist to image footprints. Each footprint has the related metadata associated with the imagery so you can do further analysis by converting it into kml or shape file for checking coverage or any other statistical analysis. The csv has the header ```id``` followed by the list of ids in the same column. The order of input is
 ```
 inputfile =input csv file with id as csv file header
 item= Item types for the idlist PSOrthoTile, PSScene4Band, PSScene3Band
