@@ -21,7 +21,7 @@ def id2footprint(inputfile,item,asset,export):
         time.sleep(2)
         try:
             print("")
-            os.system("planet data search --item-type "+str(item)+" --asset-type "+str(asset)+' --filter-json "'+os.path.join(pathway,"pjson.json")+'" --limit 10000 >>"'+export+'"')
+            os.system("planet data search --item-type "+str(item)+" --asset-type "+str(asset)+' --filter-json "'+os.path.join(pathway,"pjson.json")+'" --limit 10000 >"'+export+'"')
             print("Footprints Exported")
         except Exception as e:
             print(e)
