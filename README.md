@@ -2,7 +2,7 @@
 These are standalone tools created based on user requestes and long/short discussions with a few users from time to time. I hope to keep adding to this as on a need basis or requests.
 
 ### 1) Saved Search Download
-This tool is a quick addon to existing application of ```planet saved searches``` . This prints all the saved searches that you might have saved using the CLI or using the explorer. In which case you are able to set the filters, choose item types and date ranges and aoi within the Planet Explorer GUI and then be able to use the saved search name to execute a batch download command. This combines activation and download and works only for a single item type that was set in the search. You can choose to provide a limit which limits the number of item-asset combinations to download or use without limit and all items and asset combinations in the aoi will be downloaded.
+This tool is a quick addon to existing application of ```planet saved searches``` to download images. This prints all the saved searches that you might have saved using the CLI or using the explorer. In which case you are able to set the filters, choose item types and date ranges and aoi within the Planet Explorer GUI and then be able to use the saved search name to execute a batch download command. This combines activation and download and works only for a single item type that was set in the search. You can choose to provide a limit which limits the number of item-asset combinations to download or use without limit and all items and asset combinations in the aoi will be downloaded.
 
 Using with limits
 
