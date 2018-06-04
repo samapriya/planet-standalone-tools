@@ -12,7 +12,11 @@ Without limits the setup becomes
 
 ```python saved_search_download.py "aoi" "analytic" "C:\planet_demo"```
 
-![saved_Search](https://i.imgur.com/SpTlEBc.gif)
+<img src="/images/saved_searches.gif">
+
+<p align="center">
+  <b>Steps to create and use saved searches</b>
+</p>
 
 ### 2) Planet-IDlist-Footprint
 This tool allows you to convert a csv file with idlist to image footprints. Each footprint has the related metadata associated with the imagery so you can do further analysis by converting it into kml or shape file for checking coverage or any other statistical analysis. The csv has the header ```id``` followed by the list of ids in the same column. The order of input is
