@@ -1,7 +1,17 @@
 # Planet-Standalone-Tools
 These are standalone tools created based on user requestes and long/short discussions with a few users from time to time. I hope to keep adding to this as on a need basis or requests.
 
-### 1) Planet-IDlist-Footprint
+### 1) Saved Search Download
+This tool is a quick addon to existing application of ```planet saved searches``` . This prints all the saved searches that you might have saved using the CLI or using the explorer. In which case you are able to set the filters, choose item types and date ranges and aoi within the Planet Explorer GUI and then be able to use the saved search name to execute a batch download command. This combines activation and download and works only for a single item type that was set in the search. You can choose to provide a limit which limits the number of item-asset combinations to download or use without limit and all items and asset combinations in the aoi will be downloaded.
+
+Using with limits
+```python saved_search_download.py "aoi" "analytic" "C:\planet_demo" "10"```
+
+Without limits the setup becomes
+```python saved_search_download.py "aoi" "analytic" "C:\planet_demo"```
+
+
+### 2) Planet-IDlist-Footprint
 This tool allows you to convert a csv file with idlist to image footprints. Each footprint has the related metadata associated with the imagery so you can do further analysis by converting it into kml or shape file for checking coverage or any other statistical analysis. The csv has the header ```id``` followed by the list of ids in the same column. The order of input is
 ```
 inputfile =input csv file with id as csv file header
@@ -27,7 +37,7 @@ Structure of the input CSV file with list of file ID(s)
 
 ![CLI](https://i.imgur.com/C2WXwwz.gif)
 
-### 2) Planet-SR-Tools
+### 3) Planet-SR-Tools
 Currently the surface reflectance images have additional metadata json written into the GeoTIFF TIFFTAG. You can read the specifications and white [paper here](https://assets.planet.com/marketing/PDF/Planet_Surface_Reflectance_Technical_White_Paper.pdf). Though this is useful in some sense, not every platform can read from the header tags. This tool was written so as to extract both the PSScene4Band image metadata from which the Surface reflectance is created and then geotiff tifftags to a combined csv which can then be parsed. This tool requires that gdal is installed and can be called natively in command prompt or terminal.
 
 The example metadata json written into the GeoTIFF TIFFTAG is the following
@@ -79,7 +89,7 @@ To use simply type
 ![CLI](https://i.imgur.com/ZgCDijB.gif)
 
 
-### 3) Split MultiBand Images in Folder to Single Images
+### 4) Split MultiBand Images in Folder to Single Images
 
 This tool will allow you to split all multiband images in a folder into their component bands as single images. Note for now this only works with ".tif" files but you can change the extension within the program to whatever you need. This tool requires that gdal is installed and can be called natively in command prompt or terminal.
 
