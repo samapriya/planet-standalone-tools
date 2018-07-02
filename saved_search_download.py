@@ -5,8 +5,7 @@ import subprocess
 import requests
 from requests.auth import HTTPBasicAuth
 
-def download(name,asset,path,limit):
-    '''Print allocation and remaining quota in Sqkm.'''
+def download(name,asset,path,limit=None):
     try:
         fname = os.path.join(os.path.expanduser('~'), '.planet.json')
         contents = {}
@@ -26,12 +25,12 @@ def download(name,asset,path,limit):
         if main.status_code == 200:
             content = main.json()
             for items in content['searches']:
-                if (items['name']==name and limit !=None):
+                if (items['name']==name and limit is not None):
                     print("Processing limited assets of size "+str(limit)+" with name "+str(items['name'])+" with id "+str(items['id']))
                     subprocess.call('planet data download --search-id '+'"'+str(items['id'])+'"'+' --asset-type '+'"'+asset+'"'+' --limit '+'"'+str(limit)+'"'+' --dest '+'"'+str(path)+'"',shell=True)
-                elif (items['name']==name and limit ==None):
+                elif (items['name']==name and limit is None):
                     print("Processing all assets for "+str(items['name'])+" with id "+str(items['id']))
-                    subprocess.call('planet data download --search-id '+'"'+str(items['id'])+'"'+' --asset-type '+'"'+asset+'"'+' --limit '+'"'+str(limit)+'"'+' --dest '+'"'+str(path)+'"',shell=True)
+                    subprocess.call('planet data download --search-id '+'"'+str(items['id'])+'"'+' --asset-type '+'"'+asset+'"'+' --dest '+'"'+str(path)+'"',shell=True)
                 elif items['name'] !=name:
                     pass
         else:
