@@ -6,11 +6,11 @@ This tool is a quick addon to existing application of ```planet saved searches``
 
 Using with limits
 
-```python saved_search_download.py "aoi" "analytic" "C:\planet_demo" "10"```
+```python saved_search_download.py "search_name" "analytic" "C:\planet_demo" "10"```
 
 Without limits the setup becomes
 
-```python saved_search_download.py "aoi" "analytic" "C:\planet_demo"```
+```python saved_search_download.py "search_name" "analytic" "C:\planet_demo"```
 
 <img src="/images/saved_searches.gif">
 
