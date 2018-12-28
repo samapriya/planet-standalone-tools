@@ -4,7 +4,7 @@ These are standalone tools created based on user requestes and long/short discus
 ## Tool List
 * [Saved Search Download](#saved-search-download)
 * [Planet-IDlist-Footprint](#planet-idlist-footprint)
-* [Planet-SR-Tools](#planet-sr-tools)
+* [Planet-SR-Custom-Metadata](#planet-sr-custom-metadata)
 * [Split MultiBand Images in Folder to Single Images](#split-multiband-images-in-folder-to-single-images)
 * [Enable and Disable Email alert on Saved Search](#enable-and-disable-email-alert-on-saved-search)
 
@@ -51,7 +51,7 @@ Structure of the input CSV file with list of file ID(s)
 
 ![CLI](https://i.imgur.com/C2WXwwz.gif)
 
-### Planet-SR-Tools
+### Planet-SR-Custom-Metadata
 Currently the surface reflectance images have additional metadata json written into the GeoTIFF TIFFTAG. You can read the specifications and white [paper here](https://assets.planet.com/marketing/PDF/Planet_Surface_Reflectance_Technical_White_Paper.pdf). Though this is useful in some sense, not every platform can read from the header tags. This tool was written so as to extract both the PSScene4Band image metadata from which the Surface reflectance is created and then geotiff tifftags to a combined csv which can then be parsed. This tool requires that gdal is installed and can be called natively in command prompt or terminal.
 
 The example metadata json written into the GeoTIFF TIFFTAG is the following
