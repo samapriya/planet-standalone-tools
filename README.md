@@ -113,3 +113,29 @@ You can use the tool in 3 ways
 
 * The third method will only work on Windows OS if you have python installed in your system path , meaning you can actually type ```python```
 in your command prompt and start the python shell. In that case you can just drag and drop this tool in the folder with your images and double click on the python files and it will create a new folder called split and extract the images.
+
+
+### 5) Enable & Disable Email alert on Saved Search
+This tool is a quick addon to enable and disable email notification when new imagery is available for your saved search based on your filters. This can access all your saved searched including those built in Planet Explorer as well as those built using the Plane Client. You can create a search using client command ```planet data create-search --help``` to look at filters to setup these notifications. Currently the CLI does not allow for enabling email notification, and this tool augments to the existing saved searches. This can enable and disable all email notifications for all saved search or you can enable or disable a specific saved search based on saved-search name.
+
+Enable email notification when new images are available for all saved searched
+
+```python add_email_notification.py all enable```
+
+Disable email notification when new images are available for all saved searched
+
+```python add_email_notification.py all disable```
+
+Enable email notification when new images are available for specific saved search name
+
+```python add_email_notification.py searchname enable```
+
+Disable email notification when new images are available for specific saved search name
+
+```python add_email_notification.py searchname disable```
+
+<img src="/images/add_email.gif">
+
+<p align="center">
+  <b>Steps to enable and disable email notification on saved searches</b>
+</p>
