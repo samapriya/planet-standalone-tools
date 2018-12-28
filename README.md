@@ -118,6 +118,12 @@ in your command prompt and start the python shell. In that case you can just dra
 ### 5) Enable & Disable Email alert on Saved Search
 This tool is a quick addon to enable and disable email notification when new imagery is available for your saved search based on your filters. This can access all your saved searched including those built in Planet Explorer as well as those built using the Plane Client. You can create a search using client command ```planet data create-search --help``` to look at filters to setup these notifications. Currently the CLI does not allow for enabling email notification, and this tool augments to the existing saved searches. This can enable and disable all email notifications for all saved search or you can enable or disable a specific saved search based on saved-search name.
 
+<img src="/images/add_email.gif">
+
+<p align="center">
+  <b>Steps to enable and disable email notification on saved searches</b>
+</p>
+
 Enable email notification when new images are available for all saved searched
 
 ```python add_email_notification.py all enable```
@@ -133,9 +139,3 @@ Enable email notification when new images are available for specific saved searc
 Disable email notification when new images are available for specific saved search name
 
 ```python add_email_notification.py searchname disable```
-
-<img src="/images/add_email.gif">
-
-<p align="center">
-  <b>Steps to enable and disable email notification on saved searches</b>
-</p>
