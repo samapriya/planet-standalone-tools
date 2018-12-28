@@ -1,0 +1,4 @@
+python add_email_notification.py all disable
+python add_email_notification.py all enable
+python add_email_notification.py searchname disable
+python add_email_notification.py searchname enable
