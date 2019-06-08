@@ -149,16 +149,10 @@ Disable email notification when new images are available for specific saved sear
 ```python add_email_notification.py searchname disable```
 
 ### Remove z value and convert to GeoJSON
-This tool serves a very specific function, the planet API does not accept z value along with the lat long coordinates for a GeoJSON geometry file. Often times you can get this from a kml file or from a generated geojson file. This application can take a folder filled with kml files with z axis or geojson file with a z and remove them and write the files to a new folder. The program does require for you to install geopandas before running this tool.
+This tool serves a very specific function, the planet API does not accept z value along with the lat long coordinates for a GeoJSON geometry file. Often times you can get this from a kml file or from a generated geojson file. This application can take a folder filled with kml files with z axis or geojson file with a z and remove them and write the files to a new folder. The program does require for you to *install geopandas and gdal and ogr tools* before running this tool.
 
 The setup is simple
 
 ```
-python remove_z.py "path to input folder" "path to output folder" "kml"
-```
-
-if files are geojsons
-
-```
-python remove_z.py "path to input folder" "path to output folder" "geojson"
+python remove_z.py "path to input folder" "path to output folder"
 ```

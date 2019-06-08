@@ -6,18 +6,16 @@ import geopandas as gpd
 
 
 
-def shp2gj(folder, export):
-    for items in os.listdir(folder):
-        if items.endswith('.shp'):
-            inD = gpd.read_file(os.path.join(folder, items))
-            #Reproject to EPSG 4326
-            try:
-                data_proj = inD.copy()
-                data_proj['geometry'] = data_proj['geometry'].to_crs(epsg=4326)
-                data_proj.to_file(os.path.join(export, str(items).replace('.shp', '.geojson')), driver="GeoJSON")
-                print('Export completed to ' + str(os.path.join(export, str(items).replace('.shp', '.geojson'))))
-            except Exception as e:
-                print(e)
+def shp2gj(infile, outfile):
+    inD = gpd.read_file(infile)
+    #Reproject to EPSG 4326
+    try:
+        data_proj = inD.copy()
+        data_proj['geometry'] = data_proj['geometry'].to_crs(epsg=4326)
+        data_proj.to_file((outfile), driver="GeoJSON")
+        print('Clean GeoJSON written to ' + str(outfile))
+    except Exception as e:
+        print(e)
 
 
 def cleanz(infile, outfile):
@@ -32,28 +30,28 @@ def cleanz(infile, outfile):
         print('Clean GeoJSON written to: ' + str(outfile))
 
 
-def convert(infolder, outfolder, typ):
+def convert(infolder, outfolder):
     for file in os.listdir(infolder):
-        if typ == 'geojson' and file.endswith('.geojson'):
+        if file.endswith('.geojson'):
             infile = os.path.join(infolder, file)
             print('Processing: ' + str(infile))
             outfile = os.path.join(outfolder, file)
             cleanz(infile, outfile)
-        elif typ == 'kml' and file.endswith('.kml'):
+        elif file.endswith('.kml'):
+            infile=os.path.join(infolder,file.replace('.kml','.shp'))
+            outfile=os.path.join(outfolder,file.replace('.kml','.geojson'))
+            print('Processing: ' + str(infile))
             try:
-                print('Processing: ' + str(file))
                 subprocess.call('ogr2ogr -lco SHPT=POLYGON -f "ESRI Shapefile" '+'"'+os.path.join(infolder,file.replace('.kml','.shp'))+'" "'+ os.path.join(infolder,file)+'"',shell=False)
+                shp2gj(infile, outfile)
             except Exception as e:
                 print('Issues with:' + str(file) + str(e))
-    if typ == 'kml':
-        print('Now exporting to GeoJSON...')
-        shp2gj(infolder, outfolder)
 
 
-if len(sys.argv) == 4:
-    convert(infolder=os.path.normpath(sys.argv[1]), outfolder=os.path.normpath(sys.argv[2]),typ=sys.argv[3])
+if len(sys.argv) == 3:
+    convert(infolder=os.path.normpath(sys.argv[1]), outfolder=os.path.normpath(sys.argv[2]))
 else:
-    print('Pass inputfolder, output folder and typ as either geojson or kml')
+    print('Pass inputfolder, output folder')
 
-#convert(infolder=r'C:\Users\samapriya\Downloads\geotest',outfolder=r'C:\planet_demo',typ='geojson')
-#convert(infolder=r'C:\Users\samapriya\Box Sync\IUB\Pycodes\Applications and Tools\Planet Tools\Standalone Tools\gdal_convert\input',outfolder=r'C:\Users\samapriya\Box Sync\IUB\Pycodes\Applications and Tools\Planet Tools\Standalone Tools\gdal_convert\output',typ='kml')
+#convert(infolder=r'C:\Users\samapriya\Downloads\geotest',outfolder=r'C:\planet_demo')
+# convert(infolder=r'C:\Users\samapriya\Box Sync\IUB\Pycodes\Applications and Tools\Planet Tools\Standalone Tools\gdal_convert\input',outfolder=r'C:\Users\samapriya\Box Sync\IUB\Pycodes\Applications and Tools\Planet Tools\Standalone Tools\gdal_convert\output')
