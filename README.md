@@ -153,8 +153,12 @@ This tool serves a very specific function, the planet API does not accept z valu
 
 The setup is simple
 
+```
 python remove_z.py "path to input folder" "path to output folder" "kml"
+```
 
 if files are geojsons
-python remove_z.py "path to input folder" "path to output folder" "geojson"
 
+```
+python remove_z.py "path to input folder" "path to output folder" "geojson"
+```
