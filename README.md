@@ -7,6 +7,7 @@ These are standalone tools created based on user requestes and long/short discus
 * [Planet-SR-Custom-Metadata](#planet-sr-custom-metadata)
 * [Split MultiBand Images in Folder to Single Images](#split-multiband-images-in-folder-to-single-images)
 * [Enable and Disable Email alert on Saved Search](#enable-and-disable-email-alert-on-saved-search)
+* [Remove z value and convert to GeoJSON](#remove-z-value-and-convert-to-geojson)
 
 ### Saved Search Download
 This tool is a quick addon to existing application of ```planet saved searches``` to download images. This prints all the saved searches that you might have saved using the CLI or using the explorer. In which case you are able to set the filters, choose item types and date ranges and aoi within the Planet Explorer GUI and then be able to use the saved search name to execute a batch download command. This combines activation and download and works only for a single item type that was set in the search. You can choose to provide a limit which limits the number of item-asset combinations to download or use without limit and all items and asset combinations in the aoi will be downloaded.
@@ -146,3 +147,14 @@ Enable email notification when new images are available for specific saved searc
 Disable email notification when new images are available for specific saved search name
 
 ```python add_email_notification.py searchname disable```
+
+### Remove z value and convert to GeoJSON
+This tool serves a very specific function, the planet API does not accept z value along with the lat long coordinates for a GeoJSON geometry file. Often times you can get this from a kml file or from a generated geojson file. This application can take a folder filled with kml files with z axis or geojson file with a z and remove them and write the files to a new folder. The program does require for you to install geopandas before running this tool.
+
+The setup is simple
+
+python remove_z.py "path to input folder" "path to output folder" "kml"
+
+if files are geojsons
+python remove_z.py "path to input folder" "path to output folder" "geojson"
+

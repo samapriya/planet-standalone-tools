@@ -5,8 +5,9 @@ import time
 import sys
 pathway=os.path.dirname(os.path.realpath(__file__))
 def id2footprint(inputfile,item,asset,export):
-    with open(inputfile,'r') as f:
-        numline = len(f.readlines())
+    with open(inputfile) as csvfile:
+        reader = csv.reader(csvfile, delimiter=',')
+        numline = len(csvfile.readlines())
     with open(inputfile,'r') as f:
         reader = csv.DictReader(f)
         l=[]
