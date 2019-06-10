@@ -8,6 +8,7 @@ These are standalone tools created based on user requestes and long/short discus
 * [Split MultiBand Images in Folder to Single Images](#split-multiband-images-in-folder-to-single-images)
 * [Enable and Disable Email alert on Saved Search](#enable-and-disable-email-alert-on-saved-search)
 * [Remove z value and convert to GeoJSON](#remove-z-value-and-convert-to-geojson)
+* [Get raster bounding box and print as geojson](#get-raster-bounding-box-and-print-as-geojson)
 
 ### Saved Search Download
 This tool is a quick addon to existing application of ```planet saved searches``` to download images. This prints all the saved searches that you might have saved using the CLI or using the explorer. In which case you are able to set the filters, choose item types and date ranges and aoi within the Planet Explorer GUI and then be able to use the saved search name to execute a batch download command. This combines activation and download and works only for a single item type that was set in the search. You can choose to provide a limit which limits the number of item-asset combinations to download or use without limit and all items and asset combinations in the aoi will be downloaded.
