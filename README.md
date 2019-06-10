@@ -156,3 +156,16 @@ The setup is simple
 ```
 python remove_z.py "path to input folder" "path to output folder"
 ```
+
+### Get raster bounding box and print as geojson
+This tool uses the **rasterio** library along with **shapely** and **geodaisy**, so make sure you have these installed before you starting using this script. This script takes a raster image, extracts it footprint and generates a bounding box from that footprint. It then uses two methods to convert this into GeoJSON, one using geodaisy and the other constructing the geojson from the bounding box list. While they are both the same geometries, the start and end points are different and are provided for comparison. To use the tool make sure you run through
+
+```
+pip install rasterio, shapely, geodaisy
+```
+
+The setup is simple
+
+```
+python rasterbound.py "path to input raster file"
+```
